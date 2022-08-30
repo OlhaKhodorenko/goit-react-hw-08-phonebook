@@ -6,6 +6,9 @@ const AuthNav = () => {
   return (
     <div>
       <NavLink to="/register" exact className={css.link}>
+        Sign up
+      </NavLink>
+      <NavLink to="/login" exact className={css.link}>
         Login
       </NavLink>
     </div>
