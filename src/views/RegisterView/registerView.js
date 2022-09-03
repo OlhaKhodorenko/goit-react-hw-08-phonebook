@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations from 'redux/auth/auth-operations';
+import { authOperations } from 'redux/auth';
 import css from './registerView.module.css';
 
-const RegisterView = () => {
+export default function RegisterView() {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -65,5 +65,4 @@ const RegisterView = () => {
       </form>
     </div>
   );
-};
-export default RegisterView;
+}

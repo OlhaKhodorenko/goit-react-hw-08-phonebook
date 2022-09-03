@@ -7,7 +7,7 @@ import Selectors from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 import contactsOperations from 'redux/contacts/contactsOperations';
 
-const ContactsView = () => {
+export default function ContactsView() {
   const dispatch = useDispatch();
   const isLoadingContacts = useSelector(Selectors.getLoading);
 
@@ -24,12 +24,11 @@ const ContactsView = () => {
           </div>
           <div>
             <h2>Contacts</h2>
+            {isLoadingContacts && <h1>Loading...</h1>}
             <ContactList />
           </div>
         </div>
-        {isLoadingContacts && <h1>Loading...</h1>}
       </div>
     </Container>
   );
-};
-export default ContactsView;
+}

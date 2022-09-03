@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations from 'redux/auth/auth-operations';
+import { authOperations } from 'redux/auth';
 import css from './loginView.module.css';
 
-const LoginView = () => {
+export default function LoginView() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -52,5 +52,4 @@ const LoginView = () => {
       </form>
     </div>
   );
-};
-export default LoginView;
+}

@@ -23,7 +23,7 @@ const fetchContacts = () => async dispatch => {
   }
 };
 
-const addContacts =
+const addContact =
   ({ name, number }) =>
   dispatch => {
     const contact = {
@@ -42,13 +42,13 @@ const deleteContact = contactId => dispatch => {
 
   axios
     .delete(`/contacts/${contactId}`)
-    .then(() => deleteContactSuccess(contactId))
+    .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch(error => dispatch(deleteContactError(error.message)));
 };
 
 const contactsOperations = {
   fetchContacts,
-  addContacts,
+  addContact,
   deleteContact,
 };
 export default contactsOperations;
