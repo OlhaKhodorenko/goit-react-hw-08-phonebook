@@ -25,7 +25,7 @@ export const ContactForm = () => {
     }
     dispatch(
       contactsOperations.addContact({
-        id: nanoid(),
+        //id: nanoid(),
         name,
         number,
       })

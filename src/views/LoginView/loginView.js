@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
 import css from './loginView.module.css';
+import { TextField, Button, Container } from '@mui/material';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -27,10 +28,31 @@ export default function LoginView() {
   };
 
   return (
-    <div>
+    <Container>
       <h1>Login</h1>
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-        <label className={css.label}>
+        <TextField
+          id="standard-password-input"
+          label="Email"
+          type="email"
+          name="email"
+          autoComplete="current-email"
+          variant="standard"
+          value={email}
+          onChange={handleChange}
+        />
+
+        <TextField
+          id="standard-password-input"
+          label="Password"
+          type="password"
+          name="password"
+          autoComplete="current-password"
+          variant="standard"
+          value={password}
+          onChange={handleChange}
+        />
+        {/* <label className={css.label}>
           Email
           <input
             type="email"
@@ -47,9 +69,22 @@ export default function LoginView() {
             value={password}
             onChange={handleChange}
           ></input>
-        </label>
-        <button type="submit">Login</button>
+        </label> */}
+        <Button
+          variant="contained"
+          sx={{
+            mr: 'auto',
+            ml: 'auto',
+            mt: '30px',
+            display: 'block',
+            alignItems: 'center',
+          }}
+          type="submit"
+        >
+          Login
+        </Button>
+        {/* <button type="submit">Login</button> */}
       </form>
-    </div>
+    </Container>
   );
 }
