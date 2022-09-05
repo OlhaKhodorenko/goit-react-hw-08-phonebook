@@ -11,21 +11,17 @@ export default function ContactList() {
   const filteredContacts = contacts.filter(({ name }) => name.includes(filter));
   console.log(filter);
 
-  const onDeleteContact = contactId =>
-    dispatch(contactsOperations.deleteContact(contactId));
+  const onDeleteContact = id => dispatch(contactsOperations.deleteContact(id));
 
   return (
     <ul className={css.contactsList}>
-      {filteredContacts.map(({ contactId, name, number }) => (
-        <li key={contactId} className={css.listItem}>
+      {filteredContacts.map(({ id, name, number }) => (
+        <li key={id} className={css.listItem}>
           <span className={css.marker}></span>
           <p className={css.itemName}>
             {name}: {number}
           </p>
-          <button
-            className={css.removeBtn}
-            onClick={() => onDeleteContact(contactId)}
-          >
+          <button className={css.removeBtn} onClick={() => onDeleteContact(id)}>
             remove
           </button>
         </li>
