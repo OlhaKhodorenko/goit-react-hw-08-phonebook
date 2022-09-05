@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import css from './filter.module.css';
+
 import { changeFilter } from '../../redux/contacts/contactsActions';
-import { TextField, Button } from '@mui/material';
+import { TextField } from '@mui/material';
 
 const Filter = () => {
   const dispatch = useDispatch();

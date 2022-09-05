@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
 import css from './registerView.module.css';
 import { TextField, Button, Container } from '@mui/material';
-//import Container from "components/container/container";
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -46,15 +45,7 @@ export default function RegisterView() {
           value={name}
           onChange={handleChange}
         />
-        {/* <label className={css.label}>
-          Name
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-          ></input>
-        </label> */}
+
         <TextField
           id="standard-password-input"
           label="Email"
@@ -65,15 +56,7 @@ export default function RegisterView() {
           value={email}
           onChange={handleChange}
         />
-        {/* <label className={css.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          ></input>
-        </label> */}
+
         <TextField
           id="standard-password-input"
           label="Password"
@@ -84,15 +67,7 @@ export default function RegisterView() {
           value={password}
           onChange={handleChange}
         />
-        {/* <label className={css.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          ></input>
-        </label> */}
+
         <Button
           variant="contained"
           sx={{

@@ -52,24 +52,7 @@ export default function LoginView() {
           value={password}
           onChange={handleChange}
         />
-        {/* <label className={css.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          ></input>
-        </label>
-        <label className={css.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          ></input>
-        </label> */}
+
         <Button
           variant="contained"
           sx={{
@@ -83,7 +66,6 @@ export default function LoginView() {
         >
           Login
         </Button>
-        {/* <button type="submit">Login</button> */}
       </form>
     </Container>
   );
