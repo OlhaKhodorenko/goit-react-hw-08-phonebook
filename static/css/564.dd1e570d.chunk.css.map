@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/564.dd1e570d.chunk.css","mappings":"AAAA,0BACE,WACF,CACA,2BACE,YAAa,CACb,qBAAsB,CACtB,kBACF","sources":["views/RegisterView/registerView.module.css"],"sourcesContent":[".form {\n  width: 320px;\n}\n.label {\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 15px;\n}\n"],"names":[],"sourceRoot":""}
