@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
-
 import { Routes, Route } from 'react-router-dom';
-import Container from 'components/container/container';
 import { authOperations } from '../redux/auth';
 import { useAuth } from 'hooks';
 import { Layout } from './layout';
@@ -25,43 +23,36 @@ export const App = () => {
   return isRefreshing ? (
     <h1>Refreshing user...</h1>
   ) : (
-    <>
-      <Container>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<PublicRoute component={<HomeView />} />} />
-            <Route
-              path="/register"
-              element={
-                <PublicRoute
-                  restrited
-                  redirectTo="/contacts"
-                  component={<RegisterView />}
-                />
-              }
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<PublicRoute component={<HomeView />} />} />
+        <Route
+          path="/register"
+          element={
+            <PublicRoute
+              restricted
+              redirectTo="/contacts"
+              component={<RegisterView />}
             />
-            <Route
-              path="/login"
-              element={
-                <PublicRoute
-                  restrited
-                  redirectTo="/contacts"
-                  component={<LoginView />}
-                />
-              }
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute
+              restricted
+              redirectTo="/contacts"
+              component={<LoginView />}
             />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute
-                  redirectTo="/login"
-                  component={<ContactsView />}
-                />
-              }
-            />
-          </Route>
-        </Routes>
-      </Container>
-    </>
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsView />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 };

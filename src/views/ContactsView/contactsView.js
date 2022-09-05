@@ -10,8 +10,11 @@ import contactsOperations from 'redux/contacts/contactsOperations';
 export default function ContactsView() {
   const dispatch = useDispatch();
   const isLoadingContacts = useSelector(Selectors.getLoading);
+  console.log(isLoadingContacts);
 
-  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
+  useEffect(() => {
+    dispatch(contactsOperations.fetchContacts());
+  }, [dispatch]);
 
   return (
     <Container>

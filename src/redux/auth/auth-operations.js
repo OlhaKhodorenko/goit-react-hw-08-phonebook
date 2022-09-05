@@ -56,6 +56,7 @@ const fetchCurrentUser = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error.message);
+      console.log(persistedToken);
     }
   }
 );
